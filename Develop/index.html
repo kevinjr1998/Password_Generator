@@ -24,9 +24,11 @@
           <label for="specialCharacters"> Special Characters</label><br>
           <input type="checkbox" id="numericCharacters" name="numericCharacters" value="numericCharacters">
           <label for="numericCharacters"> Numeric Characters</label><br>
-          <input type="number" id="passwordLength"
+          <input type="text" id="passwordLength"
           min="8"
-          max="128" />
+          max="128"
+          maxlength = "3" 
+          size ="3">
           <label for="passwordLength"> Password Length </label><br>
         </div>
         <div class="card-body">
@@ -35,7 +37,6 @@
             id="password"
             placeholder="Your Secure Password"
             aria-label="Generated Password"
-            maxlength="3" size="3"
           ></textarea>
         </div>
         <div class="card-footer">
