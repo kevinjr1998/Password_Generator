@@ -15,41 +15,48 @@ generateBtn.addEventListener("click", writePassword);
 
 
 // generate password
-generatePassword(){
+function generatePassword()
+  {
 
-  var lowercaseCharacters = false;
-  var uppercaseCharacters = false;
-  var numericCharacters = false;
-  var specialCharacters = false;
+  var lowercaseCharacters = document.getElementById("lowercaseCharacters").checked;
+  var uppercaseCharacters = document.getElementById("uppercaseCharacters").checked;
+  var numericCharacters = document.getElementById("numericCharacters").checked;
+  var specialCharacters = document.getElementById("specialCharacters").checked;
   var specialCharactersList = '!#$%&()*+,-./<=>?@[\]^_{|}~'; 
-  var numericCgharactersList = '0123456789';
+  var numericCharactersList = '0123456789';
   var lowercaseCharactersList = 'abcdefghijklmnopqrstuvwxyz';
   var uppercaseCharactersList = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
   var characters = '';
-  var passwordLength;
+  var passwordLength = document.getElementById('passwordLength').value;
+  var result = '';
 
   if (!lowercaseCharacters && !uppercaseCharacters && !numericCharacters && !specialCharacters) {
     alert("You must select at least one option!");
-    return;
-  };
+    return result;
+  }
+
+  if (passwordlength > 128 || passwordLength < 8){
+    alert("Password should be between 8 and 128 characters long");
+    return result;
+  }
 
   if (uppercaseCharacters) {
     characters += uppercaseCharactersList;
-  };
+  }
 
   if (lowercaseCharacters) {
     characters += lowercaseCharactersList;
-  };
+  }
 
   if (specialCharacters) {
     characters += specialCharactersList;
-  };
+  }
 
   if (numericCharacters) {
-    characters += specialCharacters;
-  };
+    characters += numericCharactersList;
+  }
 
-  for (i=0; i < passwordLength; i++){
+  for (var i = 0; i < passwordLength; i++){
     result += characters.charAt(Math.floor(Math.random() * characters.length));
   }
 
