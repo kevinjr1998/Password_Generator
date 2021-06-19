@@ -15,6 +15,8 @@
       <div class="card">
         <div class="card-header">
           <h2>Generate a Password</h2>
+          <!-- below are the checkboxes for the properties of the password, these replace the propts that would appear in the 
+          window and provide a more user friendly interface. -->
           <h3> Please enter password criteria below: </h3>
           <input type="checkbox" id="uppercaseCharacters" name="uppercaseCharacters" value="uppercaseCharacters">
           <label for="uppercaseCharacters"> Uppercase Characters</label><br>
@@ -24,9 +26,9 @@
           <label for="specialCharacters"> Special Characters</label><br>
           <input type="checkbox" id="numericCharacters" name="numericCharacters" value="numericCharacters">
           <label for="numericCharacters"> Numeric Characters</label><br>
+          <!-- below is the textbox to enter the length of the password, the box will accept any values however they must be 3 characters long
+          and the password will not be generated if alphabetic characters are entered. -->
           <input type="text" id="passwordLength"
-          min="8"
-          max="128"
           maxlength = "3" 
           size ="3">
           <label for="passwordLength"> Password Length </label><br>
